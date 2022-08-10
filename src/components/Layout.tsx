@@ -37,11 +37,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           content="Hi! This is Vince and this is my personal site."
           key="ogdesc"
         />
+        <meta property="og:image" content="/me-banner.png" key="ogimage" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="abevince.dev" />
         <meta name="twitter:creator" content="@abevince_dev" />
         <meta name="twitter:title" content="Home | Vincent Abesamis" />
-        <meta property="og:image" content="/me-banner.png" key="ogimage" />
+        <meta
+          name="twitter:description"
+          content="Hi! This is Vince and this is my personal site."
+        />
         <meta name="twitter:image" content="/me-banner.png" />
       </Head>
       <div className="w-full min-h-screen flex items-center bg-neutral-900 bg-[url('/texture.png')] bg-repeat py-8 flex-col text-neutral-200">

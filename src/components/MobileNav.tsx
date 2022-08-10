@@ -9,7 +9,7 @@ const MyLink = (
   let { href, children, ...rest } = props
   return (
     <Link href={href}>
-      <a ref={ref} {...rest} className="text-neutral-200 block px-4 py-2 text-lg">
+      <a ref={ref} {...rest} className="block px-4 py-2 text-lg">
         {children}
       </a>
     </Link>

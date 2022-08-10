@@ -8,12 +8,12 @@ const Home: NextPage = () => {
       <div className="rounded-full bg-slate-300 h-32 w-32 relative overflow-hidden">
         <Image src="/me-min.jpeg" layout="fill" objectFit="cover" alt="My image in the beach" />
       </div>
-      <h1 className="text-5xl tracking-wide">
+      <h1 className="text-5xl tracking-wide leading-tight">
         Optimizing the web, <br className="hidden md:block" /> one component at a time.
       </h1>
       <p className="text-xl">
-        Hi! I am Vince, a software engineer from the Philippines. <br className="hidden md:block" />{' '}
-        I am passionate about anything related to web. I specialize in creating interactive{' '}
+        Hi! I am Vince, a software engineer from the Philippines. <br className="hidden md:block" />
+        I am passionate about anything related to web. I specialize in creating interactive{''}
         <br className="hidden md:block" /> experiences and functional interfaces using{' '}
         <span className="font-bold">React</span> and different technologies applicable.
       </p>

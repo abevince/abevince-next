@@ -31,6 +31,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <Head>
         <title>Home | Vincent Abesamis</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Hi! This is Vince and this is my personal site."></meta>
+        <meta
+          property="og:description"
+          content="Hi! This is Vince and this is my personal site."
+          key="ogdesc"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="abevince.dev" />
+        <meta name="twitter:creator" content="@abevince_dev" />
+        <meta name="twitter:title" content="Home | Vincent Abesamis" />
+        <meta property="og:image" content="/me-banner.png" key="ogimage" />
+        <meta name="twitter:image" content="/me-banner.png" />
       </Head>
       <div className="w-full min-h-screen flex items-center bg-neutral-900 bg-[url('/texture.png')] bg-repeat py-8 flex-col text-neutral-200">
         <div className="flex flex-row w-full lg:w-[1024px] justify-between items-center px-4">

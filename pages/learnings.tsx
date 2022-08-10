@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import * as React from 'react'
-import PageLayout from '../src/components/PageLayout'
+import PageLayout from '@components/PageLayout'
 
 const LearningsPage: NextPage = () => {
   return (

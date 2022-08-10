@@ -1,6 +1,6 @@
-import { NextPage } from 'next'
 import * as React from 'react'
-import PageLayout from '../src/components/PageLayout'
+import { NextPage } from 'next'
+import PageLayout from '@components/PageLayout'
 
 const AboutPage: NextPage = () => {
   return (

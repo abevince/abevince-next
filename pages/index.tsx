@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
@@ -18,10 +19,26 @@ const Home: NextPage = () => {
         <span className="font-bold">React</span> and different technologies applicable.
       </p>
       <section className="flex gap-8 py-6">
-        <Image src="/icons/gh.svg" width={26} height={26} alt="Github logo" />
-        <Image src="/icons/tw.svg" width={26} height={26} alt="Twitter logo" />
-        <Image src="/icons/ig.svg" width={26} height={26} alt="Instagram logo" />
-        <Image src="/icons/fb.svg" width={26} height={26} alt="Facebook logo" />
+        <Link href="https://github.com/abevince" target="_blank passHref">
+          <a target="_blank">
+            <Image src="/icons/gh.svg" width={26} height={26} alt="Github logo" />
+          </a>
+        </Link>
+        <Link href="https://twitter.com/abevince_dev" target="_blank passHref">
+          <a target="_blank">
+            <Image src="/icons/tw.svg" width={26} height={26} alt="Twitter logo" />
+          </a>
+        </Link>
+        <Link href="https://www.instagram.com/abevince" target="_blank passHref">
+          <a target="_blank">
+            <Image src="/icons/ig.svg" width={26} height={26} alt="Instagram logo" />
+          </a>
+        </Link>
+        <Link href="https://www.facebook.com/wirednew3" target="_blank passHref">
+          <a target="_blank">
+            <Image src="/icons/fb.svg" width={26} height={26} alt="Facebook logo" />
+          </a>
+        </Link>
       </section>
     </div>
   )

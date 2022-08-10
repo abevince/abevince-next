@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <div className="w-full lg:w-[1024px] px-4 mt-36 flex flex-col gap-8 mx-auto">
       <div className="rounded-full bg-slate-300 h-32 w-32 relative overflow-hidden">
-        <Image src="/me.jpeg" layout="fill" objectFit="cover" alt="My image in the beach" />
+        <Image src="/me-min.jpeg" layout="fill" objectFit="cover" alt="My image in the beach" />
       </div>
       <h1 className="text-5xl tracking-wide">
         Optimizing the web, <br className="hidden md:block" /> one component at a time.

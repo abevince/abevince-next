@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
-    <div className="w-full lg:w-[1024px] px-4 mt-36 flex flex-col gap-8 mx-auto">
+    <div className="w-full lg:w-[1024px] px-4 mt-20 md:mt-36 flex flex-col gap-8 mx-auto">
       <div className="rounded-full bg-slate-300 h-32 w-32 relative overflow-hidden">
         <Image src="/me-min.jpeg" layout="fill" objectFit="cover" alt="My image in the beach" />
       </div>
@@ -19,7 +19,11 @@ const Home: NextPage = () => {
         Hi! I am Vince, a software engineer from the Philippines. <br className="hidden md:block" />
         I am passionate about anything related to web. I specialize in creating interactive{''}
         <br className="hidden md:block" /> experiences and functional interfaces using{' '}
-        <span className="font-bold">React</span> and different technologies applicable.
+        <span className="font-semibold">
+          React, TypeScript, Next.js,
+          <br className="hidden md:block" /> TailwindCSS,{' '}
+        </span>{' '}
+        and different technologies applicable.
       </p>
       <section className="flex gap-8 py-6">
         <Link href="https://github.com/abevince" target="_blank passHref">

@@ -59,10 +59,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <MobileNav />
             <button
               className="min-w-min backdrop-blur-sm bg-zinc-300/70  dark:bg-zinc-600/30 px-4 py-2 rounded-full border-2 border-neutral-700"
-              onClick={() => {
-                console.log(darkMode)
-                setDarkMode(!darkMode)
-              }}
+              onClick={() => setDarkMode(!darkMode)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

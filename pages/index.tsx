@@ -6,11 +6,13 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import myImage from '../public/me-min.jpeg'
+
 const Home: NextPage = () => {
   return (
     <div className="w-full lg:w-[1024px] px-4 mt-20 md:mt-36 flex flex-col gap-8 mx-auto">
       <div className="rounded-full bg-slate-300 h-32 w-32 relative overflow-hidden">
-        <Image src="/me-min.jpeg" layout="fill" objectFit="cover" alt="My image in the beach" />
+        <Image src={myImage} layout="fill" objectFit="cover" alt="My image in the beach" />
       </div>
       <h1 className="text-5xl tracking-wide leading-tight">
         Optimizing the web, <br className="hidden md:block" /> one component at a time.
@@ -27,22 +29,22 @@ const Home: NextPage = () => {
       </p>
       <section className="flex gap-8 py-6">
         <Link href="https://github.com/abevince" target="_blank passHref" title="Github">
-          <a target="_blank">
+          <a target="_blank" title="Github">
             <GithubIcon />
           </a>
         </Link>
         <Link href="https://twitter.com/abevince_dev" target="_blank passHref" title="Twitter">
-          <a target="_blank">
+          <a target="_blank" title="Twitter">
             <TwitterIcon />
           </a>
         </Link>
         <Link href="https://www.instagram.com/abevince" target="_blank passHref" title="Instagram">
-          <a target="_blank">
+          <a target="_blank" title="Instagram">
             <InstagramIcon />
           </a>
         </Link>
         <Link href="https://www.facebook.com/wirednew3" target="_blank passHref" title="Facebook">
-          <a target="_blank">
+          <a target="_blank" title="Facebook">
             <FacebookIcon />
           </a>
         </Link>

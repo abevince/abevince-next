@@ -10,7 +10,7 @@ import myImage from '../public/me-min.jpeg'
 
 const Home: NextPage = () => {
   return (
-    <div className="w-full lg:w-[1024px] px-4 mt-20 md:mt-36 flex flex-col gap-8 mx-auto">
+    <div className="w-full lg:w-[1024px] px-4 mt-32 md:mt-36 flex flex-col gap-8 mx-auto">
       <div className="rounded-full bg-slate-300 h-32 w-32 relative overflow-hidden">
         <Image src={myImage} layout="fill" objectFit="cover" alt="My image in the beach" />
       </div>
@@ -21,11 +21,11 @@ const Home: NextPage = () => {
         Hi! I am Vince, a software engineer from the Philippines. <br className="hidden md:block" />
         I am passionate about anything related to web. I specialize in creating interactive{''}
         <br className="hidden md:block" /> experiences and functional interfaces using{' '}
-        <span className="font-semibold">
+        <span className="font-medium">
           React, TypeScript, Next.js,
-          <br className="hidden md:block" /> TailwindCSS,{' '}
-        </span>{' '}
-        and different technologies applicable.
+          <br className="hidden md:block" /> TailwindCSS <span className="font-normal">and</span>{' '}
+          GraphQL.
+        </span>
       </p>
       <section className="flex gap-8 py-6">
         <Link href="https://github.com/abevince" target="_blank passHref" title="Github">

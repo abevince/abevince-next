@@ -58,6 +58,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <div className="flex flex-row justify-between items-center gap-2">
             <MobileNav />
             <button
+              aria-label="Dark and light mode toggle"
+              aria-labelledby="theme-mode-toggle"
               className="min-w-min backdrop-blur-sm bg-zinc-300/70  dark:bg-zinc-600/30 px-4 py-2 rounded-full border-2 border-neutral-700"
               onClick={() => setDarkMode(!darkMode)}
             >

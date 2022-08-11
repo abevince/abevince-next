@@ -1,5 +1,11 @@
 const GithubIcon = () => (
-  <svg viewBox="0 0 128 128" className="h-7 h7" fill="currentColor">
+  <svg
+    viewBox="0 0 128 128"
+    className="h-7 h7"
+    fill="currentColor"
+    aria-hidden="true"
+    focusable="false"
+  >
     <g>
       <path
         fillRule="evenodd"

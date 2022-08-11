@@ -26,22 +26,22 @@ const Home: NextPage = () => {
         and different technologies applicable.
       </p>
       <section className="flex gap-8 py-6">
-        <Link href="https://github.com/abevince" target="_blank passHref">
+        <Link href="https://github.com/abevince" target="_blank passHref" title="Github">
           <a target="_blank">
             <GithubIcon />
           </a>
         </Link>
-        <Link href="https://twitter.com/abevince_dev" target="_blank passHref">
+        <Link href="https://twitter.com/abevince_dev" target="_blank passHref" title="Twitter">
           <a target="_blank">
             <TwitterIcon />
           </a>
         </Link>
-        <Link href="https://www.instagram.com/abevince" target="_blank passHref">
+        <Link href="https://www.instagram.com/abevince" target="_blank passHref" title="Instagram">
           <a target="_blank">
             <InstagramIcon />
           </a>
         </Link>
-        <Link href="https://www.facebook.com/wirednew3" target="_blank passHref">
+        <Link href="https://www.facebook.com/wirednew3" target="_blank passHref" title="Facebook">
           <a target="_blank">
             <FacebookIcon />
           </a>

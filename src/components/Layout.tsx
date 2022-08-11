@@ -36,16 +36,25 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           content="Hi! This is Vince and this is my personal site."
           key="ogdesc"
         />
-        <meta property="og:image" content="/me-banner.png" key="ogimage" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/abevince/image/upload/v1660207856/me-banner_jxxhoa.png"
+          key="ogimage"
+        />
+        {/* Twitter open-graph tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="abevince.dev" />
+        <meta name="twitter:image:alt" content="Vincent Abesamis - banner image" />
+        <meta name="twitter:site" content="@abevince_dev" />
         <meta name="twitter:creator" content="@abevince_dev" />
         <meta name="twitter:title" content="Home | Vincent Abesamis" />
         <meta
           name="twitter:description"
           content="Hi! This is Vince and this is my personal site."
         />
-        <meta name="twitter:image" content="/me-banner.png" />
+        <meta
+          name="twitter:image"
+          content="https://res.cloudinary.com/abevince/image/upload/v1660207856/me-banner_jxxhoa.png"
+        />
       </Head>
       <div className="transition-colors duration-200 w-full min-h-screen flex items-center bg-neutral-200 text-zinc-800  dark:text-neutral-200 dark:bg-neutral-900 bg-[url('/texture.png')] bg-repeat py-8 flex-col">
         <div className="flex flex-row w-full lg:w-[1024px] justify-between items-center px-4">

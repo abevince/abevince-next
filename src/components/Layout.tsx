@@ -6,15 +6,13 @@ import MobileNav from './MobileNav'
 const NavLink = ({ children, href }: { children: React.ReactNode; href: string }) => (
   <li>
     <Link href={href}>
-      <a className="hover:underline underline-offset-4 decoration-2 decoration-neutral-200">
-        {children}
-      </a>
+      <a className="hover:underline underline-offset-4 decoration-2">{children}</a>
     </Link>
   </li>
 )
 
 const DesktopNav = () => (
-  <nav className="hidden md:block min-w-min backdrop-blur-sm bg-zinc-600/30 px-6 py-2 rounded-full border-2 border-neutral-700">
+  <nav className="hidden md:block min-w-min backdrop-blur-sm bg-zinc-300/70 dark:bg-zinc-600/30 px-6 py-2 rounded-full border-2 border-neutral-600">
     <ul className="flex flex-row gap-8 text-lg">
       <NavLink href="/about">About</NavLink>
       <NavLink href="/articles">Articles</NavLink>
@@ -26,8 +24,9 @@ const DesktopNav = () => (
 )
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
+  const [darkMode, setDarkMode] = React.useState<boolean>(true)
   return (
-    <>
+    <div className={`${darkMode ? 'dark' : ''} `}>
       <Head>
         <title>Home | Vincent Abesamis</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -48,7 +47,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         />
         <meta name="twitter:image" content="/me-banner.png" />
       </Head>
-      <div className="w-full min-h-screen flex items-center bg-neutral-900 bg-[url('/texture.png')] bg-repeat py-8 flex-col text-neutral-200">
+      <div className="transition-colors duration-200 w-full min-h-screen flex items-center bg-neutral-200 text-zinc-800  dark:text-neutral-200 dark:bg-neutral-900 bg-[url('/texture.png')] bg-repeat py-8 flex-col">
         <div className="flex flex-row w-full lg:w-[1024px] justify-between items-center px-4">
           <div className="font-mono text-xl tracking-wide font-medium">
             <Link href="/">
@@ -58,7 +57,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <DesktopNav />
           <div className="flex flex-row justify-between items-center gap-2">
             <MobileNav />
-            <button className="min-w-min backdrop-blur-sm bg-zinc-600/30 px-4 py-2 rounded-full border-2 border-neutral-700">
+            <button
+              className="min-w-min backdrop-blur-sm bg-zinc-300/70  dark:bg-zinc-600/30 px-4 py-2 rounded-full border-2 border-neutral-700"
+              onClick={() => {
+                console.log(darkMode)
+                setDarkMode(!darkMode)
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -78,7 +83,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
         {children}
       </div>
-    </>
+    </div>
   )
 }
 

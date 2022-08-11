@@ -1,3 +1,7 @@
+import FacebookIcon from '@components/svg/facebook-svg'
+import GithubIcon from '@components/svg/github-svg'
+import InstagramIcon from '@components/svg/instagram-svg'
+import TwitterIcon from '@components/svg/twitter-svg'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -20,22 +24,22 @@ const Home: NextPage = () => {
       <section className="flex gap-8 py-6">
         <Link href="https://github.com/abevince" target="_blank passHref">
           <a target="_blank">
-            <Image src="/icons/gh.svg" width={26} height={26} alt="Github logo" />
+            <GithubIcon />
           </a>
         </Link>
         <Link href="https://twitter.com/abevince_dev" target="_blank passHref">
           <a target="_blank">
-            <Image src="/icons/tw.svg" width={26} height={26} alt="Twitter logo" />
+            <TwitterIcon />
           </a>
         </Link>
         <Link href="https://www.instagram.com/abevince" target="_blank passHref">
           <a target="_blank">
-            <Image src="/icons/ig.svg" width={26} height={26} alt="Instagram logo" />
+            <InstagramIcon />
           </a>
         </Link>
         <Link href="https://www.facebook.com/wirednew3" target="_blank passHref">
           <a target="_blank">
-            <Image src="/icons/fb.svg" width={26} height={26} alt="Facebook logo" />
+            <FacebookIcon />
           </a>
         </Link>
       </section>

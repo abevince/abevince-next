@@ -21,7 +21,7 @@ const MenuLink = React.forwardRef(MyLink)
 const MobileNav = () => (
   <Menu as="div" className="relative inline-block text-left md:hidden z-10">
     <div>
-      <Menu.Button className="inline-flex justify-center items-center gap-1 min-w-min backdrop-blur-sm bg-zinc-600/30 px-4 py-2 rounded-full border-2 border-neutral-700">
+      <Menu.Button className="inline-flex justify-center items-center gap-1 min-w-min backdrop-blur-sm bg-zinc-300/70 dark:bg-zinc-600/30 px-4 py-2 rounded-full border-2 border-neutral-600">
         Menu
         <svg
           xmlns="http://www.w3.org/2000/svg"

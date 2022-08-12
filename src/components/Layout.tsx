@@ -23,46 +23,74 @@ const DesktopNav = () => (
   </nav>
 )
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
-  const [darkMode, setDarkMode] = React.useState<boolean>(true)
+const DarkModeToggle = () => {
+  const [isDark, setIsDark] = React.useState<boolean>(false)
 
   React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.localStorage.getItem('darkMode') === 'false' ? setDarkMode(false) : setDarkMode(true)
-    }
+    try {
+      setIsDark(
+        localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
+      )
+    } catch (_) {}
   }, [])
 
+  const toggleDarkMode = () => {
+    if (!isDark) {
+      setIsDark(true)
+      document.documentElement.classList.add('dark')
+      window.localStorage.setItem('theme', 'dark')
+    }
+  }
+
+  const toggleLightMode = () => {
+    if (isDark) {
+      setIsDark(false)
+      document.documentElement.classList.remove('dark')
+      window.localStorage.setItem('theme', 'light')
+    }
+  }
   return (
-    <div className={`${darkMode ? 'dark' : ''} `}>
-      <Head>
-        <title>Home | Vincent Abesamis</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="Hi! This is Vince and this is my personal site."></meta>
-        <meta
-          property="og:description"
-          content="Hi! This is Vince and this is my personal site."
-          key="ogdesc"
-        />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/abevince/image/upload/v1660207856/me-banner_jxxhoa.png"
-          key="ogimage"
-        />
-        {/* Twitter open-graph tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image:alt" content="Vincent Abesamis - banner image" />
-        <meta name="twitter:site" content="@abevince_dev" />
-        <meta name="twitter:creator" content="@abevince_dev" />
-        <meta name="twitter:title" content="Home | Vincent Abesamis" />
-        <meta
-          name="twitter:description"
-          content="Hi! This is Vince and this is my personal site."
-        />
-        <meta
-          name="twitter:image"
-          content="https://res.cloudinary.com/abevince/image/upload/v1660207856/me-banner_jxxhoa.png"
-        />
-      </Head>
+    <button
+      aria-label="Dark and light mode toggle"
+      aria-labelledby="theme-mode-toggle"
+      className="min-w-min backdrop-blur-sm bg-zinc-300/70  dark:bg-zinc-600/30 px-4 py-2 rounded-full border-2 border-neutral-700"
+      onClick={isDark ? toggleLightMode : toggleDarkMode}
+    >
+      {isDark ? (
+        <svg width="24" height="24" fill="none" aria-hidden="true" className="h-6 w-6">
+          <path
+            d="M18 15.63c-.977.52-1.945.481-3.13.481A6.981 6.981 0 0 1 7.89 9.13c0-1.185-.04-2.153.481-3.13C6.166 7.174 5 9.347 5 12.018A6.981 6.981 0 0 0 11.982 19c2.67 0 4.844-1.166 6.018-3.37ZM16 5c0 2.08-.96 4-3 4 2.04 0 3 .92 3 3 0-2.08.96-3 3-3-2.04 0-3-1.92-3-4Z"
+            fill="currentColor"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ) : (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+          />
+        </svg>
+      )}
+    </button>
+  )
+}
+
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div>
       <div className="transition-colors duration-200 w-full min-h-screen flex items-center bg-neutral-200 text-zinc-800  dark:text-neutral-200 dark:bg-neutral-900 bg-[url('/texture.png')] bg-repeat py-8 flex-col">
         <div className="flex flex-row w-full lg:w-[1024px] justify-between items-center px-4">
           <div className="font-mono text-xl tracking-wide font-medium">
@@ -73,30 +101,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <DesktopNav />
           <div className="flex flex-row justify-between items-center gap-2">
             <MobileNav />
-            <button
-              aria-label="Dark and light mode toggle"
-              aria-labelledby="theme-mode-toggle"
-              className="min-w-min backdrop-blur-sm bg-zinc-300/70  dark:bg-zinc-600/30 px-4 py-2 rounded-full border-2 border-neutral-700"
-              onClick={() => {
-                setDarkMode(!darkMode)
-                window.localStorage.setItem('darkMode', JSON.stringify(!darkMode))
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                />
-              </svg>
-            </button>
+            <DarkModeToggle />
           </div>
         </div>
         {children}

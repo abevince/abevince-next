@@ -25,6 +25,13 @@ const DesktopNav = () => (
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [darkMode, setDarkMode] = React.useState<boolean>(true)
+
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.localStorage.getItem('darkMode') === 'false' ? setDarkMode(false) : setDarkMode(true)
+    }
+  }, [])
+
   return (
     <div className={`${darkMode ? 'dark' : ''} `}>
       <Head>
@@ -70,7 +77,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               aria-label="Dark and light mode toggle"
               aria-labelledby="theme-mode-toggle"
               className="min-w-min backdrop-blur-sm bg-zinc-300/70  dark:bg-zinc-600/30 px-4 py-2 rounded-full border-2 border-neutral-700"
-              onClick={() => setDarkMode(!darkMode)}
+              onClick={() => {
+                setDarkMode(!darkMode)
+                window.localStorage.setItem('darkMode', JSON.stringify(!darkMode))
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
